@@ -1,40 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Header} from "./site/Header";
-import {Body} from "./site/Body";
-import {Footer} from "./site/Footer";
-import {NewStudents} from "./site/NewStudents";
-import {Cars} from "./site/Cars";
+import {Button} from "./site/Button";
 
 function App() {
-    const students = [
-        {id: 1, name: "James", age: 8},
-        {id: 2, name: "Robert", age: 18},
-        {id: 3, name: "John", age: 28},
-        {id: 4, name: "Michael", age: 38},
-        {id: 5, name: "William", age: 48},
-        {id: 6, name: "David", age: 58},
-        {id: 7, name: "Richard", age: 68},
-        {id: 8, name: "Joseph", age: 78},
-        {id: 9, name: "Thomas", age: 88},
-        {id: 10, name: "Charles", age: 98},
-        {id: 11, name: "Christopher", age: 100},
-    ]
-
-    const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
-    ]
-
+    const Button1Foo = (subscriber:string, age:number) => {
+        console.log(subscriber, age)
+    }
+    const Button2Foo = (subscriber:string, age:number) => {
+        console.log(subscriber, age)
+    }
+    const Button3Foo = () => {
+        console.log("Im stupid button")
+    }
   return (
     <div className="App">
-      <Header title={"New body"}/>
-      <Body titleBody={"New body"}/>
-      <Footer titleFooter={"NewFooter"}/>
-        <NewStudents students={students}/>
-        <Cars cars={topCars}/>
+        <Button name={'MyYoutubeChannel - 1'} callBack={()=>Button1Foo("Im Vasya", 21)}/>
+        <Button name={'MyYoutubeChannel - 2'} callBack={()=>Button2Foo("Im Ivan", 34)}/>
+        <Button name={'StupidButton'} callBack={Button3Foo}/>
+      {/*<Header title={"New body"}/>*/}
+      {/*<Body titleBody={"New body"}/>*/}
+      {/*<Footer titleFooter={"NewFooter"}/>*/}
+      {/*  <NewStudents students={students}/>*/}
+      {/*  <Cars cars={topCars}/>*/}
     </div>
   );
 }
